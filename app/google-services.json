@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "351105041315",
+    "project_id": "ticketbookingclone",
+    "storage_bucket": "ticketbookingclone.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351105041315:android:6706d75fdb044c261a5016",
+        "android_client_info": {
+          "package_name": "com.example.ticketbookingclone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSpy8kQoX7r1ikxyRH35OfV2LINEvlW30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
