@@ -29,6 +29,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.view.WindowCompat
 import com.example.ticketbookingclone.MainActivity
 import com.example.ticketbookingclone.R
+import com.example.ticketbookingclone.activities.dashboard.DashboardActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +37,7 @@ class SplashActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContent {
             SplashScreen(onGetStartedClick = {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, DashboardActivity::class.java))
             })
         }
     }
