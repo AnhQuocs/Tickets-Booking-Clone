@@ -1,5 +1,6 @@
 package com.example.ticketbookingclone.activities.seat_select
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -81,7 +82,7 @@ fun SeatListScreen(
         // middle section
         ConstraintLayout(
             modifier = Modifier
-                .padding(top = 100.dp)
+                .padding(top = 80.dp)
                 .constrainAs(middleSection) {
                     top.linkTo(parent.top)
                     start.linkTo(parent.start)
@@ -103,7 +104,7 @@ fun SeatListScreen(
             LazyVerticalGrid(
                 columns = GridCells.Fixed(7),
                 modifier = Modifier
-                    .padding(top = 240.dp)
+                    .padding(top = 215.dp)
                     .padding(horizontal = 52.dp)
                     .constrainAs(seatGrid) {
                         top.linkTo(parent.top)
@@ -133,6 +134,26 @@ fun SeatListScreen(
 
             }
         }
+
+        BottomSection(
+            seatCount = seatCount,
+            selectedSeats = selectedSeatNames.joinToString(", "),
+            totalPrice = totalPrice,
+            onConfirmClick = {
+                if(seatCount > 0) {
+                    flight.Passenger = selectedSeatNames.joinToString(", ")
+                    flight.Price = totalPrice
+                    onConfirm(flight)
+                } else {
+                    Toast.makeText(context, "Please select your seat", Toast.LENGTH_SHORT).show()
+                }
+            },
+            modifier = Modifier.constrainAs(bottomSection) {
+                bottom.linkTo(parent.bottom)
+                start.linkTo(parent.start)
+                end.linkTo(parent.end)
+            }
+        )
     }
 }
 
