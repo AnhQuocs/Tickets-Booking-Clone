@@ -15,6 +15,9 @@
         android:theme="@style/Theme.TicketBookingClone"
         tools:targetApi="31">
         <activity
+            android:name=".activities.seat_select.SeatSelectActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.search_result.SearchResultActivity"
             android:exported="false" />
         <activity

@@ -20,7 +20,6 @@ class SearchResultActivity : AppCompatActivity() {
         to = intent.getStringExtra("to") ?: ""
 
         setContent {
-
             ItemListScreen(
                 from = from,
                 to = to,

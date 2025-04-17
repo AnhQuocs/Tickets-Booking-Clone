@@ -1,5 +1,6 @@
 package com.example.ticketbookingclone.activities.search_result
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -21,7 +22,9 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.AsyncImage
 import com.example.ticketbookingclone.R
+import com.example.ticketbookingclone.activities.seat_select.SeatSelectActivity
 import com.example.ticketbookingclone.domain.FlightModel
+import androidx.core.content.ContextCompat.startActivity
 
 @Composable
 fun FlightItem(
@@ -35,7 +38,10 @@ fun FlightItem(
             .padding(horizontal = 6.dp, vertical = 8.dp)
             .fillMaxWidth()
             .clickable {
-//                val intent = Intent(context, )
+                val intent = Intent(context, SeatSelectActivity::class.java).apply {
+                    putExtra("flight", item)
+                }
+                startActivity(context, intent, null)
             }
             .background(
                 color = colorResource(R.color.lightPurple),
